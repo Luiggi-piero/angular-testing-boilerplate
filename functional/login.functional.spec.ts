@@ -6,8 +6,8 @@ test('deberia redirigir al dashboard en login exitoso', async ({ page }) => {
   });
 
   await page.goto('http://localhost:4200');
-  await page.fill('input[name="email"]', 'user@gmail.com');
-  await page.fill('input[name="password"]', 'password');
+  await page.fill('input[name="email"]', 'user@example.com');
+  await page.fill('input[name="password"]', 'password123');
   await page.click('button[type="submit"]');
 
   await expect(page).toHaveURL('http://localhost:4200/dashboard');
@@ -24,7 +24,7 @@ test('deberia de mostrar un mensaje de error en login fallido', async ({
   });
 
   await page.goto('http://localhost:4200');
-  await page.fill('input[name="email"]', 'user@gmail.com');
+  await page.fill('input[name="email"]', 'user@example.com');
   await page.fill('input[name="password"]', 'pass');
   await page.click('button[type="submit"]');
 
